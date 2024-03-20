@@ -29,7 +29,8 @@ public class ConsumerBuilder<T>
     /// </summary>
     public OnDeserialize<T>? Deserializer { get; set; }
 
-    public required JsonSerializerContext JsonSerializerContext { get; set; }
+    /// Required for AOT and trimming.
+    public JsonSerializerContext? JsonSerializerContext { get; set; }
 
     public IConsumer Build(IBus bus, IServiceProvider sp)
     {

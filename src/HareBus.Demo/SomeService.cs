@@ -19,13 +19,16 @@ public class SomeMessagePayload
 
 public class SomeService
 {
+    private readonly ILogger<SomeService> _logger;
+
     public SomeService(FakeDbContext db, ILogger<SomeService> logger)
     {
+        _logger = logger;
     }
 
     public Task Handle(SomeMessagePayload payload)
     {
-        Console.WriteLine($"Hello {payload.Hello}");
+        _logger.LogInformation($"Hello {payload.Hello}");
         return Task.CompletedTask;
     }
 }

@@ -21,7 +21,7 @@ public class Consumer<T> : IConsumer
     private readonly string? _consumerTag;
     private readonly OnReceived<T> _handler;
     private readonly OnDeserialize<T>? _deserializer;
-    private readonly JsonSerializerContext _jsonSerializerContext;
+    private readonly JsonSerializerContext? _jsonSerializerContext;
 
     public Consumer(IAdvancedBus bus, ConsumerBuilder<T> builder, IServiceProvider sp)
     {
@@ -48,11 +48,20 @@ public class Consumer<T> : IConsumer
         var deserializer = _deserializer ??
                            ((msg, _, _, _) =>
                            {
-                               JsonSerializer.Deserialize(msg.Span, typeof(T), _jsonSerializerContext);
-                               var obj = (T?)JsonSerializer.Deserialize(msg.Span, typeof(T), _jsonSerializerContext);
-                               return Task.FromResult(
-                                   obj
-                               );
+                               if (_jsonSerializerContext is { } jsc)
+                               {
+                                   var obj = (T?)JsonSerializer.Deserialize(msg.Span, typeof(T), jsc);
+                                   return Task.FromResult(obj);
+                               }
+                               else
+                               {
+#pragma warning disable IL2026
+                                   // IL2026: Using member 'System.Text.Json.JsonSerializer.Deserialize<TValue>(ReadOnlySpan<Byte>, JsonSerializerOptions)'
+                                   // which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code.
+                                   var obj = JsonSerializer.Deserialize<T>(msg.Span);
+#pragma warning restore IL2026
+                                   return Task.FromResult(obj);
+                               }
                            });
 
         _disposable = _bus.Consume(

@@ -16,6 +16,7 @@ builder.Services.AddSingleton(
 builder.Services.AddTransient<SomeService>();
 builder.Services.AddScoped<FakeDbContext>();
 builder.Services.AddHostedService<Worker>();
+builder.Services.AddHostedService<WorkerConsumerCustomDeserialize>();
 
 var host = builder.Build();
 host.Run();
