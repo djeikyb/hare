@@ -2,7 +2,20 @@
   <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
   <PropertyGroup>
 
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
     <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
 
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);CS1591;CS1573</NoWarn>
+    <!-- CS1591: Missing XML comment for publicly visible type or member -->
+    <!-- CS1573: Waaah other params have docs but not meeeeee -->
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 </Project>
