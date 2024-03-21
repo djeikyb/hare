@@ -2,8 +2,10 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using EasyNetQ;
 using EasyNetQ.Consumer;
+using Merviche.Hare;
+using IConsumer = Merviche.Hare.IConsumer;
 
-namespace HareBus.Demo;
+namespace Hare.Demo;
 
 public class WorkerConsumerCustomDeserialize : IHostedService
 {

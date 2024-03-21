@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace HareBus;
+namespace Merviche.Hare;
 
 public class Consumer<T> : IConsumer
 {

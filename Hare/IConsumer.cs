@@ -1,4 +1,4 @@
-namespace HareBus;
+namespace Merviche.Hare;
 
 public interface IConsumer : IDisposable
 {

@@ -1,5 +1,5 @@
 using EasyNetQ;
-using HareBus.Demo;
+using Hare.Demo;
 
 var builder = Host.CreateApplicationBuilder(args);
 

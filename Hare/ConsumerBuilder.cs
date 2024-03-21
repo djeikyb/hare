@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using EasyNetQ;
 
-namespace HareBus;
+namespace Merviche.Hare;
 
 public class ConsumerBuilder<T>
 {

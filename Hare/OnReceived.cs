@@ -2,7 +2,7 @@ using EasyNetQ;
 using EasyNetQ.Consumer;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace HareBus;
+namespace Merviche.Hare;
 
 public delegate Task<AckStrategy> OnReceived<in T>(
     T payload,

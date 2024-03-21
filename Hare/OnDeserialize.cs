@@ -1,6 +1,6 @@
 using EasyNetQ;
 
-namespace HareBus;
+namespace Merviche.Hare;
 
 public delegate Task<T?> OnDeserialize<T>(
     ReadOnlyMemory<byte> msg,

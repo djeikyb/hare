@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HareBus", "HareBus\HareBus.csproj", "{D1D56B91-CD9F-4549-BCBA-D1A516D87F6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hare", "Hare\Hare.csproj", "{D1D56B91-CD9F-4549-BCBA-D1A516D87F6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HareBus.Demo", "HareBus.Demo\HareBus.Demo.csproj", "{F5FDEFAE-E268-4661-91BF-DF4B2F5BD7E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hare.Demo", "Hare.Demo\Hare.Demo.csproj", "{F5FDEFAE-E268-4661-91BF-DF4B2F5BD7E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

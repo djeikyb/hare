@@ -15,6 +15,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HareBus\HareBus.csproj" />
+      <ProjectReference Include="..\Hare\Hare.csproj" />
     </ItemGroup>
 </Project>

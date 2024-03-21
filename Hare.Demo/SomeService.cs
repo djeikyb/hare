@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace HareBus.Demo;
+namespace Hare.Demo;
 
 [JsonSerializable(typeof(SomeMessagePayload))]
 [JsonSourceGenerationOptions(
