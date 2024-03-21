@@ -12,6 +12,7 @@ public partial class AppJsonContext : JsonSerializerContext
 {
 }
 
+/// {"Hello":"🌏"}
 public class SomeMessagePayload
 {
     public required string Hello { get; set; }
