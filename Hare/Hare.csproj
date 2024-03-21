@@ -14,4 +14,27 @@
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     </ItemGroup>
 
+    <PropertyGroup>
+        <PackageId>$(RootNamespace)</PackageId>
+        <PackageTags>Logging;Microsoft.Extensions.Logging;Microsoft.Extensions.Logging.Console;Serilog</PackageTags>
+        <Description>Possibly a better api for building rabbitmq consumers.</Description>
+        <Authors>Jacob Certain</Authors>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageLicenseExpression>0BSD</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/djeikyb/hare.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/djeikyb/hare</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Copyright>Copyright (c) Jacob Certain 2024</Copyright>
+
+        <!-- feels discrete, it's packing instructions, not metadata. -->
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../icon.png" Pack="true" Visible="false" PackagePath="" />
+        <None Include="README.md" Pack="true" PackagePath="/"/>
+    </ItemGroup>
 </Project>
