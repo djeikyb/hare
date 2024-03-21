@@ -5,7 +5,7 @@ var builder = Host.CreateApplicationBuilder(args);
 
 builder.Services.AddSingleton(
     RabbitHutch.CreateBus(
-        "host=localhost;port=5672;virtualHost=/",
+        "host=localhost;port=5672;virtualHost=/;username=admin;password=admin",
 
         // We're bypassing most all of the EasyNetQ registered services.
         // But this one is required. Without it, EasyNetQ throws on app
