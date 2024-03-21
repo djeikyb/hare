@@ -57,6 +57,7 @@ public class WorkerConsumerCustomDeserialize : IHostedService
     private Task<SomeMessagePayload?> Deserialize(ReadOnlyMemory<byte> msg, MessageProperties _, MessageReceivedInfo __, CancellationToken ___)
     {
         var j = JsonNode.Parse(msg.Span);
+        if (j is null) return Task.FromResult((SomeMessagePayload?)null);
         var h = j.AsObject()
             .Where(x => x.Key.Equals("hello", StringComparison.InvariantCultureIgnoreCase))
             .Where(x => x.Value != null && x.Value.GetValueKind() == JsonValueKind.String)
