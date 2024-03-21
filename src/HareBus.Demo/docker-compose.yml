@@ -1,4 +1,4 @@
-name: HareBus.Demo
+name: hare-bus-demo
 
 services:
   rabbitmq:
